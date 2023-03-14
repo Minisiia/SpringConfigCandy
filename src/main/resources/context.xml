@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+
+    <bean id="candy1" class="candies.impl.Candy" init-method="init">
+        <property name="weight" value="10" />
+        <property name="price" value="5.00" />
+        <constructor-arg name="name" value="Slivki-Linivki" />
+        <constructor-arg name="type" value="waffle"  />
+    </bean>
+    <bean id="candy2" class="candies.impl.Candy" init-method="init">
+        <property name="weight" value="5" />
+        <property name="price" value="2.00" />
+        <constructor-arg name="name" value="Shaleni-Bdzhilky" />
+        <constructor-arg name="type" value="jelly"  />
+    </bean>
+    <bean id="candy3" class="candies.impl.Candy" init-method="init">
+        <property name="weight" value="15" />
+        <property name="price" value="15.00" />
+        <constructor-arg name="name" value="Mon-Blan" />
+        <constructor-arg name="type" value="chocolate"  />
+    </bean>
+
+    <util:map id="candyMap" scope="singleton" map-class="java.util.HashMap">
+        <entry key="1" value-ref="candy1"/>
+        <entry key="2" value-ref="candy2"/>
+        <entry key="3" value-ref="candy3"/>
+    </util:map>
+</beans>
