@@ -1,5 +1,7 @@
 package candies.impl;
 
+import javax.annotation.*;
+
 import candies.interfaces.Product;
 
 public class Candy implements Product {
@@ -33,8 +35,9 @@ public class Candy implements Product {
     public void setPrice(double price) {
         this.price = price;
     }
+    @PostConstruct
     public void init() {
-        manufacturer = "Roshen";
+        System.out.println(manufacturer);
     }
 
     @Override
