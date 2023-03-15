@@ -37,7 +37,7 @@ public class Candy implements Product {
     }
     @PostConstruct
     public void init() {
-        System.out.println(manufacturer);
+        manufacturer = "Roshen";
     }
 
     @Override
